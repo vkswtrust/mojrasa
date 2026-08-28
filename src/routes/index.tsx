@@ -4,6 +4,7 @@ import { Header, Footer, Ornament } from "@/components/site/Chrome";
 import heroAsset from "@/assets/hero.png.asset.json";
 import storyAsset from "@/assets/story.png.asset.json";
 import bottleAsset from "@/assets/bottle.png.asset.json";
+import bottleCutAsset from "@/assets/bottle-cut.png.asset.json";
 import giftsetAsset from "@/assets/giftset.png.asset.json";
 import m1 from "@/assets/moment1.png.asset.json";
 import m2 from "@/assets/moment2.png.asset.json";
