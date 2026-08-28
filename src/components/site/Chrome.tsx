@@ -46,7 +46,7 @@ export function Header({ active }: { active?: string }) {
               <Link
                 key={item.label}
                 to={item.to}
-                hash={item.hash}
+                {...(item.hash ? { hash: item.hash } : {})}
                 className={
                   isActive
                     ? "border-b border-primary pb-1 text-primary"
