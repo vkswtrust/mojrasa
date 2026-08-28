@@ -63,7 +63,7 @@ function Home() {
           alt="MojRasa heart-shaped cashew feni bottle against a Goan sunset"
           className="h-[460px] w-full object-cover object-right md:h-[600px]"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-cream from-5% via-cream/55 via-28% to-transparent to-48%" />
+        <div className="absolute inset-0 bg-gradient-to-r from-cream from-0% via-cream/70 via-16% to-transparent to-36%" />
         <div className="absolute inset-0 flex items-center">
           <div className="mx-auto w-full max-w-[1400px] px-6">
             <div className="max-w-md">
