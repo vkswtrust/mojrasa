@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { useHydrated } from "@tanstack/react-query";
 import { ShieldCheck, Wine } from "lucide-react";
 import { Logo, Ornament } from "@/components/site/Chrome";
 import heroAsset from "@/assets/hero.png.asset.json";
