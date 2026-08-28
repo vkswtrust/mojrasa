@@ -4,19 +4,12 @@ import { Logo, Ornament } from "@/components/site/Chrome";
 import heroAsset from "@/assets/hero.png.asset.json";
 
 const STORAGE_KEY = "mojrasa:age-verified";
-
-type Status = "verified" | "denied" | "pending";
+type Status = "pending" | "verified" | "denied";
 
 function useAgeStatus() {
-  const [hydrated, setHydrated] = useState(false);
   const [status, setStatus] = useState<Status>("pending");
 
   useEffect(() => {
-    setHydrated(true);
-  }, []);
-
-  useEffect(() => {
-    if (!hydrated) return;
     try {
       const stored = localStorage.getItem(STORAGE_KEY);
       if (stored === "yes") setStatus("verified");
@@ -25,7 +18,7 @@ function useAgeStatus() {
     } catch {
       setStatus("pending");
     }
-  }, [hydrated]);
+  }, []);
 
   const verify = () => {
     try {
@@ -51,7 +44,7 @@ function useAgeStatus() {
 export function AgeGate({ children }: { children: React.ReactNode }) {
   const { status, verify, deny } = useAgeStatus();
 
-  // SSR + pre-hydration: render nothing so server HTML matches initial client render.
+  // Server render + initial client render: render nothing to avoid hydration mismatch.
   if (status === "verified") return <>{children}</>;
   if (status === "pending") return null;
 
@@ -112,11 +105,7 @@ export function AgeGate({ children }: { children: React.ReactNode }) {
   );
 }
 
-export function AgeGateDenied() {
-  const [hydrated, setHydrated] = useState(false);
-  useEffect(() => setHydrated(true), []);
-  if (!hydrated) return null;
-
+export function AgeDeniedScreen() {
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center bg-background px-4">
       <div className="panel relative z-10 w-full max-w-md p-10 text-center">
