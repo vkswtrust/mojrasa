@@ -60,10 +60,15 @@ function Home() {
       <section className="relative overflow-hidden">
         <img
           src={heroAsset.url}
-          alt="MojRasa heart-shaped cashew feni bottle against a Goan sunset"
-          className="h-[460px] w-full object-cover object-right saturate-[1.35] contrast-[1.08] md:h-[600px]"
+          alt="Goan sunset backdrop with palms and blossoms"
+          className="h-[520px] w-full object-cover object-right md:h-[620px]"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-cream from-0% via-cream/65 via-15% to-transparent to-34%" />
+        <div className="absolute inset-0 bg-gradient-to-r from-cream from-0% via-cream/60 via-18% to-cream/10" />
+        <img
+          src={bottleCutAsset.url}
+          alt="MojRasa Cashew Feni heart-shaped bottle with cashew apples and blossoms"
+          className="pointer-events-none absolute right-[3%] bottom-0 h-[86%] w-auto opacity-95 md:right-[10%] md:h-[92%]"
+        />
         <div className="absolute inset-0 flex items-center">
           <div className="mx-auto w-full max-w-[1400px] px-6">
             <div className="max-w-md">
