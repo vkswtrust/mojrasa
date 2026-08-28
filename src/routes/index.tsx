@@ -60,9 +60,9 @@ function Home() {
       {/* HERO */}
       <section className="relative overflow-hidden">
         <img
-          src={heroAsset.url}
-          alt="Goan sunset backdrop with palms and blossoms"
-          className="h-[520px] w-full scale-105 object-cover object-right blur-[6px] md:h-[620px]"
+          src={storyAsset.url}
+          alt="Goan coastline at sunset"
+          className="h-[520px] w-full scale-110 object-cover object-center blur-[3px] md:h-[620px]"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-cream from-0% via-cream/75 via-20% to-cream/35" />
         <img
