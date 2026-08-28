@@ -61,9 +61,9 @@ function Home() {
         <img
           src={heroAsset.url}
           alt="MojRasa heart-shaped cashew feni bottle against a Goan sunset"
-          className="h-[460px] w-full object-cover object-right md:h-[600px]"
+          className="h-[460px] w-full object-cover object-right saturate-[1.35] contrast-[1.08] md:h-[600px]"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-cream from-0% via-cream/70 via-16% to-transparent to-36%" />
+        <div className="absolute inset-0 bg-gradient-to-r from-cream from-0% via-cream/65 via-15% to-transparent to-34%" />
         <div className="absolute inset-0 flex items-center">
           <div className="mx-auto w-full max-w-[1400px] px-6">
             <div className="max-w-md">
