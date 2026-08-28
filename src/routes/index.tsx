@@ -62,9 +62,9 @@ function Home() {
         <img
           src={heroAsset.url}
           alt="Goan sunset backdrop with palms and blossoms"
-          className="h-[520px] w-full object-cover object-right md:h-[620px]"
+          className="h-[520px] w-full scale-105 object-cover object-right blur-[6px] md:h-[620px]"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-cream from-0% via-cream/60 via-18% to-cream/10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-cream from-0% via-cream/75 via-20% to-cream/35" />
         <img
           src={bottleCutAsset.url}
           alt="MojRasa Cashew Feni heart-shaped bottle with cashew apples and blossoms"
