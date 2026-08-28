@@ -8,8 +8,12 @@ const STORAGE_KEY = "mojrasa:age-verified";
 type Status = "verified" | "denied" | "pending";
 
 function useAgeStatus() {
-  const hydrated = useHydrated();
+  const [hydrated, setHydrated] = useState(false);
   const [status, setStatus] = useState<Status>("pending");
+
+  useEffect(() => {
+    setHydrated(true);
+  }, []);
 
   useEffect(() => {
     if (!hydrated) return;
