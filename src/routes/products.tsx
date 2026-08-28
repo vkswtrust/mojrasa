@@ -10,7 +10,7 @@ import {
   KeyRound,
   ScrollText,
   Hourglass,
-  Bottle,
+  Milk as Bottle,
   Droplets,
   Compass,
   Snowflake,
