@@ -47,6 +47,7 @@ export function AgeGate({ children }: { children: React.ReactNode }) {
   // Server render + initial client render: render nothing to avoid hydration mismatch.
   if (status === "verified") return <>{children}</>;
   if (status === "pending") return null;
+  if (status === "denied") return <AgeDeniedScreen />;
 
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center overflow-y-auto bg-background px-4 py-8">
