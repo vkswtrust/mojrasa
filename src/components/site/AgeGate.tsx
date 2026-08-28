@@ -4,19 +4,19 @@ import { Logo, Ornament } from "@/components/site/Chrome";
 import heroAsset from "@/assets/hero.png.asset.json";
 
 const STORAGE_KEY = "mojrasa:age-verified";
-type Status = "pending" | "verified" | "denied";
+type Status = "checking" | "gate" | "verified" | "denied";
 
 function useAgeStatus() {
-  const [status, setStatus] = useState<Status>("pending");
+  const [status, setStatus] = useState<Status>("checking");
 
   useEffect(() => {
     try {
       const stored = localStorage.getItem(STORAGE_KEY);
       if (stored === "yes") setStatus("verified");
       else if (stored === "no") setStatus("denied");
-      else setStatus("pending");
+      else setStatus("gate");
     } catch {
-      setStatus("pending");
+      setStatus("gate");
     }
   }, []);
 
