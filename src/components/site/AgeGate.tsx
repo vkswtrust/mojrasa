@@ -30,24 +30,28 @@ function useAgeStatus() {
   };
 
   const deny = () => {
-    try {
-      localStorage.setItem(STORAGE_KEY, "no");
-    } catch {
-      /* ignore */
-    }
     setStatus("denied");
   };
 
-  return { status, verify, deny };
+  const reconsider = () => {
+    try {
+      localStorage.removeItem(STORAGE_KEY);
+    } catch {
+      /* ignore */
+    }
+    setStatus("gate");
+  };
+
+  return { status, verify, deny, reconsider };
 }
 
 export function AgeGate({ children }: { children: React.ReactNode }) {
-  const { status, verify, deny } = useAgeStatus();
+  const { status, verify, deny, reconsider } = useAgeStatus();
 
   // Server render + initial client render ("checking"): render nothing to avoid hydration mismatch.
   if (status === "verified") return <>{children}</>;
   if (status === "checking") return null;
-  if (status === "denied") return <AgeDeniedScreen />;
+  if (status === "denied") return <AgeDeniedScreen onReconsider={reconsider} />;
 
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center overflow-y-auto bg-background px-4 py-8">
@@ -106,7 +110,7 @@ export function AgeGate({ children }: { children: React.ReactNode }) {
   );
 }
 
-export function AgeDeniedScreen() {
+export function AgeDeniedScreen({ onReconsider }: { onReconsider: () => void }) {
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center bg-background px-4">
       <div className="panel relative z-10 w-full max-w-md p-10 text-center">
@@ -119,6 +123,13 @@ export function AgeDeniedScreen() {
           once you have reached the legal drinking age. Until then, we look
           forward to welcoming you.
         </p>
+        <button
+          type="button"
+          onClick={onReconsider}
+          className="btn-crimson hover:btn-crimson-hover mt-7 justify-center"
+        >
+          Go back
+        </button>
         <div className="mt-6 flex justify-center">
           <Ornament />
         </div>
