@@ -8,7 +8,9 @@ const NAV = [
   { label: "Craft", to: "/", hash: "craft" },
   { label: "Products", to: "/products", hash: undefined },
   { label: "The Essence", to: "/", hash: "essence" },
+  { label: "Enquiry", to: "/enquiry", hash: undefined },
   { label: "Contact", to: "/", hash: "contact" },
+
 ];
 
 export function Ornament() {
