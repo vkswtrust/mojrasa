@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Instagram, Facebook, Twitter, Mail, Phone } from "lucide-react";
+import { Instagram, Mail, Phone } from "lucide-react";
 import logoAsset from "@/assets/logo.png.asset.json";
 
 const NAV = [
@@ -32,7 +32,7 @@ export function Logo({ className = "h-12" }: { className?: string }) {
   return <img src={logoAsset.url} alt="MojRasa" className={`${className} mix-blend-multiply`} />;
 }
 
-export function Header({ active }: { active?: string }) {
+export function Header({ active: _active }: { active?: string }) {
   return (
     <header className="sticky top-0 z-40 border-b border-border/60 bg-cream/90 backdrop-blur">
       <div className="mx-auto flex max-w-[1400px] flex-wrap items-center justify-between gap-4 px-5 py-3">
@@ -41,17 +41,12 @@ export function Header({ active }: { active?: string }) {
         </Link>
         <nav className="flex flex-wrap items-center gap-x-6 gap-y-2 font-sans text-[0.68rem] tracking-[0.18em] uppercase md:text-[0.72rem]">
           {NAV.map((item) => {
-            const isActive = active === item.label;
             return (
               <Link
                 key={item.label}
                 to={item.to}
                 {...(item.hash ? { hash: item.hash } : {})}
-                className={
-                  isActive
-                    ? "border-b border-primary pb-1 text-primary"
-                    : "pb-1 text-muted-foreground transition-colors hover:text-primary"
-                }
+                className="text-muted-foreground transition-colors hover:text-primary"
               >
                 {item.label}
               </Link>
@@ -100,16 +95,15 @@ export function Footer() {
         <div className="text-center md:text-right">
           <h3 className="font-display text-sm tracking-[0.24em] uppercase">Follow Us</h3>
           <div className="mt-4 flex justify-center gap-3 md:justify-end">
-            {[Instagram, Facebook, Twitter].map((Icon, i) => (
-              <a
-                key={i}
-                href="#"
-                aria-label="Social link"
-                className="flex size-9 items-center justify-center rounded-full border border-border bg-cream text-primary transition-colors hover:bg-accent"
-              >
-                <Icon className="size-4" />
-              </a>
-            ))}
+            <a
+              href="https://www.instagram.com/moj_rasa?igsi=d2x5N3RjY2VzdXFx"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Follow MojRasa on Instagram"
+              className="flex size-9 items-center justify-center rounded-full border border-border bg-cream text-primary transition-colors hover:bg-accent"
+            >
+              <Instagram className="size-4" />
+            </a>
           </div>
         </div>
       </div>
