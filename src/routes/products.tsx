@@ -166,6 +166,10 @@ function Products() {
                   <Heart className="size-3 fill-rose text-rose" />
                   <span className="h-px w-14 bg-gold/70" />
                 </div>
+                <p className="mt-3 text-center font-display text-3xl text-gold md:text-left">₹1,499</p>
+                <p className="text-center font-sans text-[0.65rem] text-muted-foreground md:text-left">
+                  inclusive of all taxes
+                </p>
                 <p className="mt-4 font-display text-[0.72rem] tracking-[0.2em] text-rose uppercase">
                   The Essence of Love
                 </p>
@@ -214,6 +218,10 @@ function Products() {
                   <Heart className="size-3 fill-rose text-rose" />
                   <span className="h-px w-14 bg-gold/70" />
                 </div>
+                <p className="mt-3 text-center font-display text-3xl text-gold md:text-left">₹2,499</p>
+                <p className="text-center font-sans text-[0.65rem] text-muted-foreground md:text-left">
+                  inclusive of all taxes
+                </p>
                 <p className="mt-4 font-display text-[0.72rem] tracking-[0.2em] text-rose uppercase">
                   A Gift That Speaks from the Heart
                 </p>
