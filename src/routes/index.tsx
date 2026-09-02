@@ -1,6 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Play, CircleCheck } from "lucide-react";
 import { Header, Footer, Ornament } from "@/components/site/Chrome";
+import { EnquiryForm } from "@/components/site/EnquiryForm";
+
 import heroAsset from "@/assets/hero.png.asset.json";
 import storyAsset from "@/assets/story.png.asset.json";
 import bottleAsset from "@/assets/bottle.png.asset.json";
@@ -251,7 +253,10 @@ function Home() {
         </div>
       </section>
 
+      <EnquiryForm />
+
       <Footer />
+
     </div>
   );
 }
