@@ -1,14 +1,18 @@
-# Welcome to your Lovable project
+# Mojrasa
+
+create the website for exactly the same with same product same details extract the product image and place it in the place of the product i need exactly same ui for this website extract the logo from the image and use it and the web logo
 
 This project was built with [Lovable](https://lovable.dev).
 
+**Live app**: https://mojrasa.lovable.app
+
 ## Build with Lovable
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+Continue developing this project in the [Lovable editor](https://lovable.dev/projects/aaef94d3-621b-4da3-b270-0f107d40730b).
 
 - **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+- **Stay in sync**: every change made in Lovable is committed straight to this repository.
+- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
 
 ## Development
 
@@ -20,10 +24,3 @@ cd <repository-name>
 npm i
 npm run dev
 ```
-
-## Built with
-
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
