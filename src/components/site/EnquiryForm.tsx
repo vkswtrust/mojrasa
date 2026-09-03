@@ -25,10 +25,18 @@ export function EnquiryForm() {
     const name = form.name.trim();
     const email = form.email.trim();
     const message = form.message.trim();
-    if (name.length < 2) return toast.error("Please enter your name.");
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email))
-      return toast.error("Please enter a valid email address.");
-    if (message.length < 5) return toast.error("Please write a short message.");
+    if (name.length < 2) {
+      toast.error("Please enter your name.");
+      return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
+      toast.error("Please enter a valid email address.");
+      return;
+    }
+    if (message.length < 5) {
+      toast.error("Please write a short message.");
+      return;
+    }
 
     setBusy(true);
     try {
