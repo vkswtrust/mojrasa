@@ -20,8 +20,8 @@ import {
   Heart,
 } from "lucide-react";
 import { Header, Footer, Ornament } from "@/components/site/Chrome";
-import bottleAsset from "@/assets/bottle.png.asset.json";
-import giftsetAsset from "@/assets/giftset.png.asset.json";
+import bottleAsset from "@/assets/bottle.png";
+import giftsetAsset from "@/assets/giftset.png";
 
 export const Route = createFileRoute("/products")({
   head: () => ({
