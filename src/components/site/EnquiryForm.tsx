@@ -115,6 +115,18 @@ export function EnquiryForm() {
                 />
               </label>
               <label className="block font-sans text-sm text-muted-foreground">
+                Phone (optional)
+                <input
+                  type="tel"
+                  inputMode="tel"
+                  maxLength={20}
+                  value={form.phone}
+                  onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                  className={field}
+                />
+
+              </label>
+              <label className="block font-sans text-sm text-muted-foreground">
                 Message
                 <textarea
                   required
