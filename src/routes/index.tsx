@@ -29,8 +29,8 @@ export const Route = createFileRoute("/")({
         content:
           "Premium cashew feni from Goa, crafted with love. Explore MojRasa Cashew Feni and the Premium Gift Set.",
       },
-      { property: "og:image", content: `https://mojrasa.lovable.app${heroAsset.url}` },
-      { name: "twitter:image", content: `https://mojrasa.lovable.app${heroAsset.url}` },
+      { property: "og:image", content: `https://mojrasa.lovable.app${heroAsset}` },
+      { name: "twitter:image", content: `https://mojrasa.lovable.app${heroAsset}` },
     ],
   }),
   component: Home,
@@ -47,11 +47,11 @@ const CRAFT = [
 ];
 
 const MOMENTS = [
-  { src: m1.url, label: "Celebrations" },
-  { src: m2.url, label: "Togetherness" },
-  { src: m3.url, label: "Relaxation" },
-  { src: m4.url, label: "Gifts of Love" },
-  { src: m5.url, label: "Goa Heritage" },
+  { src: m1, label: "Celebrations" },
+  { src: m2, label: "Togetherness" },
+  { src: m3, label: "Relaxation" },
+  { src: m4, label: "Gifts of Love" },
+  { src: m5, label: "Goa Heritage" },
 ];
 
 function Home() {
@@ -62,13 +62,13 @@ function Home() {
       {/* HERO */}
       <section className="relative overflow-hidden">
         <img
-          src={storyAsset.url}
+          src={storyAsset}
           alt="Goan coastline at sunset"
           className="h-[520px] w-full scale-110 object-cover object-center blur-[3px] md:h-[620px]"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-cream from-0% via-cream/75 via-20% to-cream/35" />
         <img
-          src={bottleCutAsset.url}
+          src={bottleCutAsset}
           alt="MojRasa Cashew Feni heart-shaped bottle with cashew apples and blossoms"
           className="pointer-events-none absolute right-[3%] bottom-0 h-[86%] w-auto opacity-95 md:right-[10%] md:h-[92%]"
         />
@@ -128,7 +128,7 @@ function Home() {
             </Link>
           </div>
           <img
-            src={storyAsset.url}
+            src={storyAsset}
             alt="Illustrated Goan coastline with church, palms and blossoms"
             className="h-full w-full rounded-xl object-cover"
           />
@@ -167,7 +167,7 @@ function Home() {
           <div className="mt-10 grid gap-8 lg:grid-cols-2">
             {[
               {
-                img: bottleAsset.url,
+                img: bottleAsset,
                 alt: "MojRasa Cashew Feni heart-shaped bottle",
                 title: ["MojRasa", "Cashew Feni"],
                 sub: "The Essence of Love",
@@ -176,7 +176,7 @@ function Home() {
                 cta: "Discover More",
               },
               {
-                img: giftsetAsset.url,
+                img: giftsetAsset,
                 alt: "MojRasa Premium Gift Set with bottle, glass, pen and keychain",
                 title: ["MojRasa", "Premium Gift Set"],
                 sub: "Perfect for Every Occasion",
