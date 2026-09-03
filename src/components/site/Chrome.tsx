@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram, Mail, Phone } from "lucide-react";
-import logoAsset from "@/assets/logo.png";
+const logoAsset = "/images/logo.png";
 
 const NAV = [
   { label: "Home", to: "/", hash: undefined as string | undefined },

@@ -3,16 +3,16 @@ import { ArrowRight, Play, CircleCheck } from "lucide-react";
 import { Header, Footer, Ornament } from "@/components/site/Chrome";
 import { EnquiryForm } from "@/components/site/EnquiryForm";
 
-import heroAsset from "@/assets/hero.png";
-import storyAsset from "@/assets/story.png";
-import bottleAsset from "@/assets/bottle.png";
-import bottleCutAsset from "@/assets/bottle-cut.png";
-import giftsetAsset from "@/assets/giftset.png";
-import m1 from "@/assets/moment1.png";
-import m2 from "@/assets/moment2.png";
-import m3 from "@/assets/moment3.png";
-import m4 from "@/assets/moment4.png";
-import m5 from "@/assets/moment5.png";
+const heroAsset = "/images/hero.png";
+const storyAsset = "/images/story.png";
+const bottleAsset = "/images/bottle.png";
+const bottleCutAsset = "/images/bottle-cut.png";
+const giftsetAsset = "/images/giftset.png";
+const m1 = "/images/moment1.png";
+const m2 = "/images/moment2.png";
+const m3 = "/images/moment3.png";
+const m4 = "/images/moment4.png";
+const m5 = "/images/moment5.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
