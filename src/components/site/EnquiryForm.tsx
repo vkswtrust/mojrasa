@@ -11,20 +11,40 @@ const INFO = [
   { icon: Clock, title: "Hours", lines: ["Mon – Sat: 10:00 AM – 7:00 PM"] },
 ];
 
+const EMPTY = { name: "", email: "", phone: "", message: "" };
+
 export function EnquiryForm() {
   const send = useServerFn(submitEnquiry);
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [form, setForm] = useState(EMPTY);
   const [busy, setBusy] = useState(false);
 
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (busy) return; // prevent duplicate submissions
+
+    const name = form.name.trim();
+    const email = form.email.trim();
+    const message = form.message.trim();
+    if (name.length < 2) {
+      toast.error("Please enter your name.");
+      return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
+      toast.error("Please enter a valid email address.");
+      return;
+    }
+    if (message.length < 5) {
+      toast.error("Please write a short message.");
+      return;
+    }
+
     setBusy(true);
     try {
-      await send({ data: form });
-      toast.success("Thank you! Your enquiry has been sent to our team.");
-      setForm({ name: "", email: "", message: "" });
+      await send({ data: { name, email, phone: form.phone.trim(), message } });
+      toast.success("Thank you! Your enquiry has been received — our team will reply shortly.");
+      setForm(EMPTY);
     } catch {
-      toast.error("Could not send your enquiry. Please try again.");
+      toast.error("Could not send your enquiry. Please try again or email cc@mojrasa.com.");
     } finally {
       setBusy(false);
     }
@@ -93,6 +113,18 @@ export function EnquiryForm() {
                   onChange={(e) => setForm({ ...form, email: e.target.value })}
                   className={field}
                 />
+              </label>
+              <label className="block font-sans text-sm text-muted-foreground">
+                Phone (optional)
+                <input
+                  type="tel"
+                  inputMode="tel"
+                  maxLength={20}
+                  value={form.phone}
+                  onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                  className={field}
+                />
+
               </label>
               <label className="block font-sans text-sm text-muted-foreground">
                 Message

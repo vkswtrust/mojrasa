@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { ShieldCheck, Wine } from "lucide-react";
 import { Logo, Ornament } from "@/components/site/Chrome";
-import heroAsset from "@/assets/hero.png.asset.json";
+import heroAsset from "@/assets/hero.png";
 
 const STORAGE_KEY = "mojrasa:age-verified";
 type Status = "checking" | "gate" | "verified" | "denied";
@@ -57,7 +57,7 @@ export function AgeGate({ children }: { children: React.ReactNode }) {
     <div className="fixed inset-0 z-[100] flex items-center justify-center overflow-y-auto bg-background px-4 py-8">
       <div className="pointer-events-none absolute inset-0 opacity-25">
         <img
-          src={heroAsset.url}
+          src={heroAsset}
           alt=""
           aria-hidden="true"
           className="h-full w-full object-cover object-center blur-[2px]"

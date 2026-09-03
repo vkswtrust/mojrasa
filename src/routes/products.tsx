@@ -20,8 +20,8 @@ import {
   Heart,
 } from "lucide-react";
 import { Header, Footer, Ornament } from "@/components/site/Chrome";
-import bottleAsset from "@/assets/bottle.png.asset.json";
-import giftsetAsset from "@/assets/giftset.png.asset.json";
+import bottleAsset from "@/assets/bottle.png";
+import giftsetAsset from "@/assets/giftset.png";
 
 export const Route = createFileRoute("/products")({
   head: () => ({
@@ -38,8 +38,8 @@ export const Route = createFileRoute("/products")({
         content:
           "Two expressions of love. One timeless essence. Explore MojRasa Cashew Feni and the Premium Gift Set.",
       },
-      { property: "og:image", content: `https://mojrasa.lovable.app${bottleAsset.url}` },
-      { name: "twitter:image", content: `https://mojrasa.lovable.app${bottleAsset.url}` },
+      { property: "og:image", content: `https://mojrasa.lovable.app${bottleAsset}` },
+      { name: "twitter:image", content: `https://mojrasa.lovable.app${bottleAsset}` },
     ],
   }),
   component: Products,
@@ -196,7 +196,7 @@ function Products() {
                 </ul>
               </div>
               <img
-                src={bottleAsset.url}
+                src={bottleAsset}
                 alt="MojRasa Cashew Feni heart-shaped bottle with cashew apples and blossoms"
                 className="w-full rounded-xl object-cover"
               />
@@ -248,7 +248,7 @@ function Products() {
                 </ul>
               </div>
               <img
-                src={giftsetAsset.url}
+                src={giftsetAsset}
                 alt="MojRasa Premium Gift Set with copper bottle, glass, pen, keychain and love note"
                 className="w-full rounded-xl object-cover"
               />

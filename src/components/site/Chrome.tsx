@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram, Mail, Phone } from "lucide-react";
-import logoAsset from "@/assets/logo.png.asset.json";
+import logoAsset from "@/assets/logo.png";
 
 const NAV = [
   { label: "Home", to: "/", hash: undefined as string | undefined },
@@ -31,7 +31,7 @@ export function Ornament() {
 }
 
 export function Logo({ className = "h-12" }: { className?: string }) {
-  return <img src={logoAsset.url} alt="MojRasa" className={`${className} mix-blend-multiply`} />;
+  return <img src={logoAsset} alt="MojRasa" className={`${className} mix-blend-multiply`} />;
 }
 
 export function Header({ active: _active }: { active?: string }) {
