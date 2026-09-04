@@ -2,7 +2,7 @@ import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 
 const APPS_SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbwTKPqmYfL1xOIXdfDfYMTp5AAa1QcHdTQgc-cPAxYJ47B01sPuKQP_x6XEx-t7F1IT/exec";
+  "https://script.google.com/macros/s/AKfycbwYGcB2dNqYaipAPSBk5nmoz_6LLcCSVjhbVQNY9vGXsEiY0U3kCIZlxOG_RE4vgmJ_/exec";
 
 const enquirySchema = z.object({
   name: z.string().trim().min(2, "Please enter your name").max(100),
@@ -18,18 +18,15 @@ export const submitEnquiry = createServerFn({ method: "POST" })
   .handler(async ({ data }) => {
     const receivedAt = new Date().toISOString();
 
-    const body = new URLSearchParams({
-      name: data.name,
-      email: data.email,
-      phone: data.phone ?? "",
-      message: data.message,
-      submittedAt: receivedAt,
-    });
-
     const res = await fetch(APPS_SCRIPT_URL, {
       method: "POST",
-      headers: { "content-type": "application/x-www-form-urlencoded" },
-      body,
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({
+        name: data.name,
+        email: data.email,
+        phone: data.phone ?? "",
+        message: data.message,
+      }),
       redirect: "follow",
     });
 
