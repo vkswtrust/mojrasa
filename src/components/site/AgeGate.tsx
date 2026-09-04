@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { ShieldCheck, Wine } from "lucide-react";
 import { Logo, Ornament } from "@/components/site/Chrome";
-const heroAsset = "/images/hero.png";
+import heroAsset from "@/assets/hero.png";
 
 const STORAGE_KEY = "mojrasa:age-verified";
 type Status = "checking" | "gate" | "verified" | "denied";
