@@ -41,7 +41,27 @@ export function EnquiryForm() {
     setBusy(true);
     try {
       await send({ data: { name, email, phone: form.phone.trim(), message } });
-      toast.success("Thank you! Your enquiry has been received — our team will reply shortly.");
+
+      // Open the visitor's Gmail with a pre-filled email to the admin
+      const subject = `Website Enquiry from ${name}`;
+      const body = [
+        `Name: ${name}`,
+        `Email: ${email}`,
+        `Phone: ${form.phone.trim() || "Not provided"}`,
+        "",
+        "Message:",
+        message,
+      ].join("\n");
+      const gmailUrl =
+        "https://mail.google.com/mail/?view=cm&fs=1" +
+        `&to=${encodeURIComponent("cc@mojrasa.com")}` +
+        `&su=${encodeURIComponent(subject)}` +
+        `&body=${encodeURIComponent(body)}`;
+      window.open(gmailUrl, "_blank", "noopener,noreferrer");
+
+      toast.success(
+        "Your enquiry was saved — Gmail has opened with your message ready to send to our team."
+      );
       setForm(EMPTY);
     } catch {
       toast.error("Could not send your enquiry. Please try again or email cc@mojrasa.com.");
